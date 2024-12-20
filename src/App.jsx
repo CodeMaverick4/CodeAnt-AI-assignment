@@ -1,19 +1,16 @@
 import React from "react";
-import Sidebar from "./component/sidebar";
-import Navbar from "./component/navBar";
-import RepositoryList from "./component/repoesList";
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from "./component/dashboard/Dashboard";
+import LoginPage from "./component/LoginPage";
 
 const App = () => {
   return (
-    <>
-      <Navbar/>
-      <div className="flex  h-screen overflow-hidden">
-        
-        <Sidebar />
-        <RepositoryList/>
-      </div>
-      </> 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
